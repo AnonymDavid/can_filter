@@ -149,7 +149,7 @@ def displayData():
             doSnapshot = False
 
             if len(snapshot) > 0:
-                if filterType.get() == 2:
+                if filterType.get() == '2':
                     newFilters = []
                     for key in idFilters:
                         newData = [int(bt, 16) for bt in message[key].split(' ')[:-1]]
@@ -194,7 +194,7 @@ def displayData():
                     idFilters = newFilters
             else:
                 checkedFilterCount = sum([x.get() for x in checkboxValues])
-                requiredPassedBytes = (1 if filterType.get() == 0 else checkedFilterCount)
+                requiredPassedBytes = (1 if filterType.get() == '0' else checkedFilterCount)
             snapshot = message
         
         ####################################################
@@ -243,8 +243,6 @@ def snapshot_event():
         box['state'] = 'disabled'
     
     doSnapshot = True
-
-    print(filterType.get())
 
 ### CLEAR BUTTON CLICK EVENT ###
 def clearFilters_event():
